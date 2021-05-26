@@ -1,0 +1,3 @@
+config/config.json
+.serverless
+node_modules

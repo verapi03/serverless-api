@@ -1,0 +1,102 @@
+# For full config options, check the docs:
+#    docs.serverless.com
+
+service: serverless-node-postgres-rds-rest-api
+
+# app and org for use with dashboard.serverless.com
+app: serverless-app
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+plugins:
+  - serverless-offline
+
+configValidationMode: error
+
+# you can overwrite defaults here
+#  stage: dev
+#  region: us-east-1
+
+functions:
+
+  createAuthor:
+    handler: handler.createAuthor
+    events:
+      - httpApi:
+          path: /author
+          method: post
+
+  getAuthor:
+    handler: handler.getAuthor
+    events:
+      - httpApi:
+          path: /author/{id}
+          method: get
+
+  getAllAuthors:
+    handler: handler.getAllAuthors
+    events:
+      - httpApi:
+          path: /authors
+          method: get
+
+  updateAuthor:
+    handler: handler.updateAuthor
+    events:
+      - httpApi:
+          path: /author/{id}
+          method: put
+
+  deleteAuthor:
+    handler: handler.deleteAuthor
+    events:
+      - httpApi:
+          path: /author/{id}
+          method: delete
+
+  createPublication:
+    handler: handler.createPublication
+    events:
+      - httpApi:
+          path: /author/publication
+          method: post
+
+  getAllPublications:
+    handler: handler.getAllPublications
+    events:
+      - httpApi:
+          path: /publications
+          method: get
+
+  getPublication:
+    handler: handler.getPublication
+    events:
+      - httpApi:
+          path: /author/publication/{id}
+          method: get
+
+  getAuthorPublications:
+    handler: handler.getAuthorPublications
+    events:
+      - httpApi:
+          path: /author/publications/{authorId}
+          method: get
+
+  updatePublication:
+    handler: handler.updatePublication
+    events:
+      - httpApi:
+          path: /author/publication/{id}
+          method: put
+
+  deletePublication:
+    handler: handler.deletePublication
+    events:
+      - httpApi:
+          path: /author/publication/{id}
+          method: delete
