@@ -42,21 +42,19 @@ To see this project working:
 
 4. Install the project's dependencies: "npm install"
 
-5. Initiate sequelize: "node_modules/.bin/sequelize init"
+5. Migrate the models into the DB: "node_modules/.bin/sequelize db:migrate"
 
-6. Migrate the models into the DB: "node_modules/.bin/sequelize db:migrate"
-
-7. Populate the DB through the seeders: "node_modules/.bin/sequelize db:seed:all"
+6. Populate the DB through the seeders: "node_modules/.bin/sequelize db:seed:all"
 
 By now you should be able to open PgAdmin or any other DB client, configure its connection to the DB with the RDS credentials and see the tables and data stored.
 
-8. Initialize the API locally by running the serverless-offline node module: "serverless offline"
+7. Initialize the API locally by running the serverless-offline node module: "serverless offline"
 
 You should be seeing on the terminal the API endpoints like this:
 
 ![Screen Shot 2021-05-26 at 5 13 50 PM](https://user-images.githubusercontent.com/14207804/119738225-fa856880-be45-11eb-850d-fe1e421766fe.png)
 
-9. Start making requests and exploring the API through POSTMAN:
+8. Start making requests and exploring the API through POSTMAN:
 
 ![Screen Shot 2021-05-26 at 5 18 19 PM](https://user-images.githubusercontent.com/14207804/119738506-6e277580-be46-11eb-9ea5-1ccc46d76333.png)
 
@@ -74,4 +72,4 @@ You should be seeing on the terminal the API endpoints like this:
 
 ![Screen Shot 2021-05-26 at 5 28 39 PM](https://user-images.githubusercontent.com/14207804/119739434-d9be1280-be47-11eb-816e-3b05b92bfd8a.png)
 
-10. If you want you can deploy the API to AWS lambda by running the serverless framework command: "serverless deploy"
+9. If you want you can deploy the API to AWS lambda by running the serverless framework command: "serverless deploy"
